@@ -20,16 +20,36 @@ export const createGame = async (req: Request, res: Response) => {
     description,
     imageLink,
     BGGLink,
-    cubicleInLibrary
+    cubicleInLibrary,
   } = req.body as BaseGame;
   try {
     const data = await db.query(
       `INSERT INTO games (name, best_group_size, game_time_in_seconds, description, image_link, bgg_link, cubicle_in_library) VALUES ($1, $2, $3, $4, $5, $6, $7) returning *`,
-      [name, bestGroupSize, gameTimeInSeconds, description, imageLink, BGGLink, cubicleInLibrary]
+      [
+        name,
+        bestGroupSize,
+        gameTimeInSeconds,
+        description,
+        imageLink,
+        BGGLink,
+        cubicleInLibrary,
+      ]
     );
-    res
-      .status(200)
-      .json({ message: "Success, new game has been creaated!", data: data.rows });
+    res.status(200).json({
+      message: "Success, new game has been creaated!",
+      data: data.rows,
+    });
+  } catch (error: any) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const deleteGame = async (req: Request, res: Response) => {
+  const id = req.params.id;
+
+  try {
+    await db.query(`DELETE FROM games WHERE id = $1`, [id]);
+    res.status(200).json({ message: "Success, the game was deleted" });
   } catch (error: any) {
     res.status(500).json({ message: error.message });
   }
