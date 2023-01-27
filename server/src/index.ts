@@ -19,8 +19,8 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-
 app.use("/api/games", gamesRoutes);
+app.use("/api", WelcomeRoutes);
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
