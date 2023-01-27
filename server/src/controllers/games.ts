@@ -54,3 +54,36 @@ export const deleteGame = async (req: Request, res: Response) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+export const updateGame = async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const {
+    name,
+    bestGroupSize,
+    gameTimeInSeconds,
+    description,
+    imageLink,
+    BGGLink,
+    cubicleInLibrary,
+  } = req.body;
+
+  try {
+    const data = await db.query(
+      `Update games SET name = $1, best_group_size = $2, game_time_in_seconds = $3, description = $4, image_link = $5, bgg_link = $6, cubicle_in_library = $7 WHERE id = $8 RETURNING *`,
+      [
+        name,
+        bestGroupSize,
+        gameTimeInSeconds,
+        description,
+        imageLink,
+        BGGLink,
+        cubicleInLibrary,
+        id
+      ]
+    );
+    res.status(200).json({ message: "Game successfuly updated", data: data.rows });
+  } catch (error: any) {
+    res.status(500).json({ message: error });
+  }
+};
