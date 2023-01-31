@@ -4,6 +4,7 @@ import cors from "cors";
 import helmet from "helmet";
 
 import gamesRoutes from './Routes/games'
+import welcomeRoutes from './Routes/welcome'
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/games", gamesRoutes);
-app.use("/api", WelcomeRoutes);
+app.use("/", welcomeRoutes);
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
