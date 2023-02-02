@@ -9,7 +9,7 @@ const GamesIndex = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/games/")
+      .get("http://localhost:5000/api/games/")
       .then((response) => setData(response.data.message))
       .catch((erros) => console.error(erros));
   }, []);
@@ -22,8 +22,9 @@ const GamesIndex = () => {
         description={data.description}
         imageLink={data.image_link}
         bestGroupSize={data.best_group_size}
-        playTime={data.game_time_in_seconds / 60}
+        gameTimeInMin={data.game_time_in_min}
         BGGLink={data.bgg_link}
+        cubicle={data.cubicle_in_library}
       />
     ));
   };
