@@ -1,7 +1,7 @@
 export interface BaseGame {
   name: string;
   bestGroupSize: number;
-  gameTimeInSeconds: number;
+  gameTimeInMin: number;
   description: string;
   imageLink: string;
   BGGLink: string;
