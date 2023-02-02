@@ -16,7 +16,7 @@ export const createGame = async (req: Request, res: Response) => {
   const {
     name,
     bestGroupSize,
-    gameTimeInSeconds,
+    gameTimeInMin,
     description,
     imageLink,
     BGGLink,
@@ -24,11 +24,11 @@ export const createGame = async (req: Request, res: Response) => {
   } = req.body as BaseGame;
   try {
     const data = await db.query(
-      `INSERT INTO games (name, best_group_size, game_time_in_seconds, description, image_link, bgg_link, cubicle_in_library) VALUES ($1, $2, $3, $4, $5, $6, $7) returning *`,
+      `INSERT INTO games (name, best_group_size, game_time_in_min, description, image_link, bgg_link, cubicle_in_library) VALUES ($1, $2, $3, $4, $5, $6, $7) returning *`,
       [
         name,
         bestGroupSize,
-        gameTimeInSeconds,
+        gameTimeInMin,
         description,
         imageLink,
         BGGLink,
@@ -41,6 +41,7 @@ export const createGame = async (req: Request, res: Response) => {
     });
   } catch (error: any) {
     res.status(500).json({ message: error.message });
+    console.log(error.message)
   }
 };
 
@@ -61,7 +62,7 @@ export const updateGame = async (req: Request, res: Response) => {
   const {
     name,
     bestGroupSize,
-    gameTimeInSeconds,
+    gameTimeInMin,
     description,
     imageLink,
     BGGLink,
@@ -70,11 +71,11 @@ export const updateGame = async (req: Request, res: Response) => {
 
   try {
     const data = await db.query(
-      `Update games SET name = $1, best_group_size = $2, game_time_in_seconds = $3, description = $4, image_link = $5, bgg_link = $6, cubicle_in_library = $7 WHERE id = $8 RETURNING *`,
+      `Update games SET name = $1, best_group_size = $2, game_time_in_min = $3, description = $4, image_link = $5, bgg_link = $6, cubicle_in_library = $7 WHERE id = $8 RETURNING *`,
       [
         name,
         bestGroupSize,
-        gameTimeInSeconds,
+        gameTimeInMin,
         description,
         imageLink,
         BGGLink,
