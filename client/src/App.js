@@ -4,7 +4,6 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import Home from "./pages/Home";
 import AddGame from "./components/AddGame/AddGame";
 import GamesIndex from "./components/GamesIndex/GamesIndex";
 
