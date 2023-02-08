@@ -5,7 +5,9 @@ import {
   Routes
 } from "react-router-dom";
 import AddGame from "./components/AddGame/AddGame";
-import GamesIndex from "./components/GamesIndex/GamesIndex";
+import GamesIndex from "./components/BGAGamesIndex/BGAGamesIndex";
+import GamesSelection from "./components/GamesSelection/GamesSelection";
+
 
 const App = () => {
   return (
@@ -13,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<GamesIndex/>}></Route>
         <Route path="/addgame" element={<AddGame/>}></Route>
+        <Route path="/gamesselection" element={<GamesSelection/>}></Route>
       </Routes>
     </Router>
   );
