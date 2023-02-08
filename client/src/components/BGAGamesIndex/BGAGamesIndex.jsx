@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import GameDisplay from "../GameDisplay/GameDisplay";
+import GameDisplay from "../BGAGameDisplay/BGAGameDisplay";
 
 const GamesIndex = () => {
   const [data, setData] = useState(null);
