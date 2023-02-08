@@ -15,7 +15,7 @@ const GamesSelection = () => {
   }, []);
 
   const renderGameDisplays = (data) => {
-    return data.map((data) => <GameDisplay data={data} />);
+    return data.map((data) => <GameDisplay key={data.id} data={data} />);
   };
 
   return (
