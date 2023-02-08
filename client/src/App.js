@@ -5,7 +5,7 @@ import {
   Routes
 } from "react-router-dom";
 import AddGame from "./components/AddGame/AddGame";
-import GamesIndex from "./components/BGAGamesIndex/BGAGamesIndex";
+import GamesIndex from "./components/GamesIndex/GamesIndex";
 import GamesSelection from "./components/BGAGamesSelection/BGAGamesSelection";
 
 
