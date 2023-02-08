@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import AddGame from "./components/AddGame/AddGame";
 import GamesIndex from "./components/BGAGamesIndex/BGAGamesIndex";
-import GamesSelection from "./components/GamesSelection/GamesSelection";
+import GamesSelection from "./components/BGAGamesSelection/BGAGamesSelection";
 
 
 const App = () => {
