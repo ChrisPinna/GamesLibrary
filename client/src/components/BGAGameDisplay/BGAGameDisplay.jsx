@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GameDisplay = (props) => {
+const BGAGameDisplay = (props) => {
   return (
     <div>
       <div>
@@ -17,4 +17,4 @@ const GameDisplay = (props) => {
   )
 }
 
-export default GameDisplay
+export default BGAGameDisplay
