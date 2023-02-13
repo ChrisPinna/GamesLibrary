@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import GameDisplay from "../BGAGameDisplay/BGAGameDisplay";
+import GameDisplay from "../GameDisplay/GameDisplay";
 
 const GamesIndex = () => {
   const [data, setData] = useState(null);
@@ -17,14 +17,8 @@ const GamesIndex = () => {
   const renderGameDisplays = (data) => {
     return data.map((data) => (
       <GameDisplay
-        id={data.id}
-        gameName={data.name}
-        description={data.description}
-        imageLink={data.image_link}
-        bestGroupSize={data.best_group_size}
-        gameTimeInMin={data.game_time_in_min}
-        BGGLink={data.bgg_link}
-        cubicle={data.cubicle_in_library}
+        key={data.id}
+        data={data}
       />
     ));
   };
