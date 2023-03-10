@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 15rem;
+}
+
+.name {
+  display: flex;
+}
+.details {
+display: flex;
+flex-direction: row;
+}
+.details div {
+margin-right: 1rem;
+}
+
+.art {
+  object-fit: contain;
+  width: auto;
+  height: 100%;
+}
