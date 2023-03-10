@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import GameDisplay from "../GameDisplay/GameDisplay";
+import './GamesIndex.css'
 
 const GamesIndex = () => {
   const [data, setData] = useState(null);
@@ -25,8 +26,7 @@ const GamesIndex = () => {
 
   return (
     <div>
-      <div>{data ? renderGameDisplays(data) : "Loading..."}</div>
-      <div>{data ? JSON.stringify(data) : "Loading..."}</div>
+      <div className="game-index">{data ? renderGameDisplays(data) : "Loading..."}</div>
     </div>
   );
 };
