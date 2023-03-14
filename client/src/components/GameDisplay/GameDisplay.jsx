@@ -4,8 +4,10 @@ import './GameDisplay.css'
 const GameDisplay = (props) => {
 
   return (
-    <div className="main">
-        <img className="art" src={props.data.image_link} />
+    <div className="main" >
+    <div className="art-container">
+      <img className="art" src={props.data.image_link} />
+    </div>
         <div className="name">
           <strong >{props.data.name}</strong>
         </div>
