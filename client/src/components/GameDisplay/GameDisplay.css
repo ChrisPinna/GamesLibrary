@@ -1,22 +1,41 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 1rem;
+  margin: 0.5rem;
   height: 15rem;
+  background-color: #f7f0ea;
+  border-radius: 0.4rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.main:hover {
+  box-shadow:  0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .name {
+  padding: 0.4rem;
+
+  object-fit: contain;
   display: flex;
 }
 .details {
-display: flex;
-flex-direction: row;
+  padding: 0.4rem;
+  object-fit: contain;
+  display: flex;
+  flex-direction: row;
 }
 .details div {
-margin-right: 1rem;
+  margin-right: 1rem;
+}
+
+.art-container {
+  height: 80%;
 }
 
 .art {
+  border-radius: 0.5rem;
+  box-shadow:  0 0 4px rgba(0, 0, 0, 0.5);
+  padding: 1px;
   object-fit: contain;
   width: auto;
   height: 100%;
